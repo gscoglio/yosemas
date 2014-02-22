@@ -1,0 +1,5 @@
+
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#646464, endColorstr=#414141);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#646464, endColorstr=#414141)";

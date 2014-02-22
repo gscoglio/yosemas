@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+div { border: 0px solid black; }
+
+body {font-size:12px; font-family: Verdana, Trebuchet MS, Geneva, sans-serif ; color:#000; }
+a { color:#000; text-decoration:none; }
+
+
+/* Estilo de la CABECERA */
+#cabecera {}
+#logo {margin-left:10%; padding:5px;}
+
+.menu {vertical-align:middle;}
+
+#menu {
+	font-size:16px; position:absolute;
+	top: 50px; left: 232px; width: 839px;
+}
+#menu li { list-style:none; float:left; padding:5px 10px; vertical-align:middle;  }
+#menu a:hover{ /* color:#FFF; */}
+
+#menu2 { font-size:16px; position:absolute; top: 30px; left: 230px; width: 850px; }
+#menu2 li { list-style:none; float:left; padding:5px 15px; margin-right:2px; background-color:#FFF; }
+#menu2 li:hover { background-color:#093; color:#FFF; }
+#menu2 a:hover{ color:#FFF; }
+
+#redesSociales { vertical-align:top} 
+#redesSociales a {text-decoration:none;}
+#redesSociales a:link {}
+#redesSociales a:visited {}
+#redesSociales a:hover {text-decoration:none;}
+#redesSociales a:active {}
+/* Fin del estilo de la CABECERA */
+
+/* Estilo de la BARRA */
+/* #barra { color:#FFF; background-color:#999999; margin-left: -8px; margin-right: -8px; text-align:center; padding:2px;} */
+#barra { font-size:14px; color:#FFF; background: url('../img/preg/ImgPanelNegro.png'); margin-left: -8px; margin-right: -8px; text-align:center; padding:2px;}
+ 
+#user {font-size: 16px; }
+
+#exit {font-size: 16px;}
+#exit a {color:#FFF; text-decoration:none;}
+#exit a:hover {color: #FFFFFF; text-decoration: underline}
+#exit a:active {color: #333}
+
+#enlaces { display:inline;}
+#enlaces a {color:#FFF; text-decoration:none; margin: 1px}
+#enlaces a:link {}
+#enlaces a:visited {}
+#enlaces a:hover {color: #FFFFFF; text-decoration: underline}
+#enlaces a:active {color: #333}
+
+#registrate {display:inline; font:bold;}
+#pass {display:inline;}
+/* Fin del estilo de la BARRA */
+
+
+/* Estilo del CUERPO */
+#cuerpo { margin-left: 5%; margin-right: 5%; margin-bottom: 50px; padding:15px; }
+#titulo { margin:8px; padding:8px; font-size:25px;}
+
+/* Fin del estilo del CUERPO */
+
+/* Estilo del PIE */
+#pie { position: fixed; bottom: 0; width: 100%; background: #cecece; margin-left: -8px; font-size:10px; text-align:center; color:#000 }
+#pie a {color:#000; text-decoration:none; margin: 1px}
+#pie a:link {}
+#pie a:visited {}
+#pie a:hover {color: #000; text-decoration: underline}
+#pie a:active {color: #333}
+
+#pie2 { position: fixed; bottom: 0; width: 100%; background: #cecece; margin-left: -8px; text-align:center; color:#000; padding:5px; }
+#pie2 a {color:#000; text-decoration:none; margin: 1px}
+#pie2 a:hover {color: #000; text-decoration: underline}
+#pie2 a:active {color: #333}
+
+#titulos {font-size:1.2em;}
+
+#perfil {font-size:1.2em;}
+.datos {font-size:1.4em; font-weight:bold; margin-bottom:20px; }
+.puntos {font-size:2em; font-weight:bold; margin-bottom:10px;}
+/* Fin del estilo del PIE */

@@ -1,0 +1,22 @@
+--- ESTADOS ---
+
+Creada	=  1; 
+
+Publicada = 2; 
+
+Finalizada = 3;
+
+Respondida = 4; 
+
+
+--- CATEGORIAS ---
+
+Deportes = 1;
+
+Politica y Economia = 2;
+
+Espectaculo = 3;
+
+Miscelanea = 4;
+
+

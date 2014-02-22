@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { font: 80% Verdana, Geneva, sans-serif, sans-serif; }
+
+/*
+ * DISEÑO DEL RANKING
+ */
+
+#interiorTabla { background: url('../img/torneo/ColorTabla2.png'); margin: 5px 5px; padding:5px;}
+#tabla { margin: 0px 0px 0px 0px; padding:0px;}
+
+#colorNegro {
+	background: url('../img/preg/ImgPanelNegro.png');
+	color:#000;
+	text-align:left;
+	width: 176px;
+	padding:10px;
+}
+
+#colorVerde { 
+	background: url('../img/preg/ImgPanelVerde.png');
+	color:#000; 
+	text-align:left; 
+	width: 176px;
+	padding:10px;
+}
+
+#colorAzul {
+	background: url('../img/preg/ImgPanelAzul.png'); 
+	color:#000;
+	text-align:left; 
+	width: 176px; 
+	padding:10px; 
+} 
+
+#colorAmarillo {
+	background: url('../img/preg/ImgPanelAmarillo.png'); 
+	color:#000;
+	text-align:left; 
+	width: 176px; 
+	padding:10px; 
+}
+
+#colorRojo { 
+	background: url('../img/preg/ImgPanelRojo.png'); 
+	color:#000;
+	text-align:left; 
+	width: 176px; 
+	padding:10px;
+}
+
+#botonNegro { background:url('../img/rank/botonNegro.png') no-repeat; border:none; width:62px; height:25px; text-align:right; }
+#botonNegro:hover {cursor:pointer;}
+
+#botonVerde { background:url('../img/rank/botonVerde.png') no-repeat; border:none; width:62px; height:25px; text-align:right; }
+#botonVerde:hover {cursor:pointer;}
+
+#botonAzul { background:url('../img/rank/botonAzul.png') no-repeat; border:none; width:62px; height:25px; text-align:right; }
+#botonAzul:hover {cursor:pointer;}
+
+#botonAmarillo { background:url('../img/rank/botonAmarillo.png') no-repeat; border:none; width:62px; height:25px; text-align:right; }
+#botonAmarillo:hover {cursor:pointer;}
+
+#botonRojo { background:url('../img/rank/botonRojo.png') no-repeat; border:none; width:62px; height:25px; text-align:right; }
+#botonRojo:hover {cursor:pointer;}
+
+.filtrar {text-align:right;}
+
+.mpreg{	margin: 5px; margin-left:12px; }
+
+#buscar{ font-size: 120%;}
+#posiciones{ font-size:120%; text-align:center;}
+#nombreTorneo { font-size: 150%; color:#FFF; padding:10px;}
+
+#color{ background: url('../img/torneo/ColorTabla.png');}
+#volver{ display:inline; float:right; }
+
+
+
+#imagen {margin-top: 0px; margin-left:30%; margin-bottom:0px;
+		 background:url('../img/torneo/buscar.png') no-repeat; border:none; width:80px; height:35px;
+}
+#imagen:hover {cursor: pointer;}
+
+.link { color:#2E9AFE; font-weight:bold;}
+.link a {color:#005AAF; text-decoration:none;}
+.link a:hover {color: #00274C; text-decoration:underline;}
+.link a:active {color: #333}
+
+/*
+ * DISEÑO DE CREAR TORNEOS
+*/
+
+#colorTablaCrear {
+	background: url('../img/torneo/ColorTabla.png');  margin: 50px 10px; 
+	padding-top:40px;  padding-left:10px; padding-right:10px; padding-bottom:40px;
+}
+#interiorTablaCrear { background: url('../img/torneo/ColorTabla2.png'); height:300px; padding:10px; margin:10px; }
+
+/*
+ * DISEÑO DE ADMINISTRAR TORNEOS
+*/
+
+#colorTablaAdmin {
+	background: url('../img/torneo/ColorTabla.png'); margin: 50px 10px; padding:5px;
+/*	padding-top:40px;  padding-left:10px; padding-right:10px; padding-bottom:40px; */
+}
+
+#interiorTablaEsperando { background: url('../img/torneo/ColorTabla2.png'); margin-top:0px; margin-bottom:0px; }
+#tablaEsperando { margin: 0px 0px 0px 0px; padding:0px;}
+
+#interiorTablaEliminados { background: url('../img/torneo/ColorTabla2.png'); margin-top:0px;}
+#tablaEliminados { margin: 0px 0px 0px 0px; padding:0px;}
+
+#lineaNegra{border:0px solid #000; margin:0px;}

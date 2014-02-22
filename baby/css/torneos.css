@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { font: 80% "Trebuchet MS", sans-serif; }
+
+/*
+ * DISEÑO DE MIS TORNEOS
+ */
+#colorTabla {
+	background: url('../img/torneo/ColorTabla.png');  margin: 10px 10px; 
+	padding-top:10px;  padding-left:10px; padding-right:10px; padding-bottom:40px;
+}
+
+#buscar{ font-size: 120%;}
+#posiciones{ font-size:120%; text-align:center;}
+#nombreTorneo { font-size: 150%; color:#FFF; padding:10px;}
+
+#color{ background: url('../img/torneo/ColorTabla.png');}
+#volver{ display:inline; float:right; }
+
+#interiorTabla { background: url('../img/torneo/ColorTabla2.png'); margin: 5px 5px; padding:5px;}
+#tabla { margin: 0px 0px 0px 0px; padding:0px;}
+
+#imagen {margin-top: 0px; margin-left:30%; margin-bottom:0px;
+		 background:url('../img/torneo/buscar.png') no-repeat; border:none; width:80px; height:35px;
+}
+#imagen:hover {cursor: pointer;}
+
+.link { color:#2E9AFE; font-weight:bold;}
+.link a {color:#005AAF; text-decoration:none;}
+.link a:hover {color: #00274C; text-decoration:underline;}
+.link a:active {color: #333}
+
+/*
+ * DISEÑO DE CREAR TORNEOS
+*/
+
+#colorTablaCrear {
+	background: url('../img/torneo/ColorTabla.png');  margin: 10px 10px; 
+	padding-top:40px;  padding-left:10px; padding-right:10px; padding-bottom:40px;
+}
+#interiorTablaCrear { background: url('../img/torneo/ColorTabla2.png'); height:300px; padding:10px; margin:10px; }
+
+/*
+ * DISEÑO DE ADMINISTRAR TORNEOS
+*/
+
+#colorTablaAdmin {
+	background: url('../img/torneo/ColorTabla.png'); margin: 50px 10px; padding:5px;
+/*	padding-top:40px;  padding-left:10px; padding-right:10px; padding-bottom:40px; */
+}
+
+#interiorTablaEsperando { background: url('../img/torneo/ColorTabla2.png'); margin-top:0px; margin-bottom:0px; }
+#tablaEsperando { margin: 0px 0px 0px 0px; padding:0px;}
+
+#interiorTablaEliminados { background: url('../img/torneo/ColorTabla2.png'); margin-top:0px;}
+#tablaEliminados { margin: 0px 0px 0px 0px; padding:0px;}
+
+#lineaNegra{border:0px solid #000; margin:0px;}
+
+
+
+
+
+

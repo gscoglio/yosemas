@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { font-family:Verdana, Geneva, sans-serif; color:#000; font-size:16px;} 
+/* #contenido { width:650px; height:500px} */
+#tablas { table-layout: fixed; width: 600px; height:210px; }
+td{ border: 0px solid black; }
+
+#colorVerde {font-size:14px; background: url('../img/preg/ImgPanelVerde.png'); color:#FFF; text-align:left; padding-left:10px;} 
+#colorAzul {font-size:14px; background: url('../img/preg/ImgPanelAzul.png'); color:#FFF; text-align:left; padding-left:10px;} 
+#colorAmarillo {font-size:14px; background: url('../img/preg/ImgPanelAmarillo.png'); color:#FFF; text-align:left; padding-left:10px;}
+#colorRojo {font-size:14px; background: url('../img/preg/ImgPanelRojo.png'); color:#FFF; text-align:left; padding-left:10px;}
+
+.mpreg{	margin: 5px; }
+#pregunta {font-size:18px; font-weight:bold;}
+
+#perfil{ margin-top:-100%;}
+
+
+/* --------------------------------------------------------------------- */
+/* ----------------------------- BOTONES ------------------------------- */
+/* --------------------------------------------------------------------- */
+
+#botonVerde { background:url('../img/preg/botRespVerde.png') no-repeat; border:none; width:130px; height:35px; }
+#botonVerde:hover {cursor:pointer;}
+
+#botonAzul { background:url('../img/preg/botRespAzul.png') no-repeat; border:none; width:130px; height:35px; }
+#botonAzul:hover {cursor:pointer;}
+
+#botonAmarillo { background:url('../img/preg/botRespAmarillo.png') no-repeat; border:none; width:130px; height:35px; }
+#botonAmarillo:hover {cursor:pointer;}
+
+#botonRojo { background:url('../img/preg/botRespRojo.png') no-repeat; border:none; width:130px; height:35px; }
+#botonRojo:hover {cursor:pointer;}
+/* --------------------------------------------------------------------- */
+/* ------------------------- FIN BOTONES ------------------------------- */
+/* --------------------------------------------------------------------- */
+
+#paginacionTodas {position: fixed; bottom: 0; margin-left:100px;}
+#paginacion {position: fixed; bottom: 0; margin-left:200px;}
+
+
+/* ----------------------------------------------------- */
+/* ------------- Pagination: Deportes ------------------ */
+/* ----------------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-deportes li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */  float:left; }
+#pagination-deportes a           { border:solid 1px #DDDDDD; margin-right:2px; }
+
+#pagination-deportes .previous-off,
+#pagination-deportes .next-off   { color:#666666;  display:block; float:left;  font-weight:bold; padding:3px 4px; }
+
+#pagination-deportes .next a,
+#pagination-deportes .previous a { font-weight:bold; border:solid 1px #FFFFFF; }
+#pagination-deportes .active     { color:#001634; font-weight:bold; display:block; float:left;  padding:4px 6px; } /* Color del seleccionado */
+
+#pagination-deportes a:link,
+#pagination-deportes a:visited   { color:#009933;  display:block; float:left;  padding:3px 6px; text-decoration:none; } /* Color de las letras */
+#pagination-deportes a:hover     { border:solid 1px #666666; }
+
+/* ------------------------------------------------------ */
+
+
+/* ---------------------------------------------------------------- */
+/* ------------- Pagination: Politica y Economia ------------------ */
+/* ---------------------------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-poliyeco li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */  float:left; }
+#pagination-poliyeco a           { border:solid 1px #DDDDDD; margin-right:2px; }
+
+#pagination-poliyeco .previous-off,
+#pagination-poliyeco .next-off   { color:#666666;  display:block; float:left;  font-weight:bold; padding:3px 4px; }
+
+#pagination-poliyeco .next a,
+#pagination-poliyeco .previous a { font-weight:bold; border:solid 1px #FFFFFF; }
+#pagination-poliyeco .active     { color:#001634; font-weight:bold; display:block; float:left;  padding:4px 6px; } /* Color del seleccionado */
+
+#pagination-poliyeco a:link,
+#pagination-poliyeco a:visited   { color:#006699;  display:block; float:left;  padding:3px 6px; text-decoration:none; } /* Color de las letras */
+#pagination-poliyeco a:hover     { border:solid 1px #666666; }
+
+/* ---------------------------------------------------------------------- */
+
+/* ----------------------------------------------------- */
+/* ------------- Pagination: Miscelaneas ------------------ */
+/* ----------------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-miscelaneas li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */  float:left; }
+#pagination-miscelaneas a           { border:solid 1px #DDDDDD; margin-right:2px; }
+
+#pagination-miscelaneas .previous-off,
+#pagination-miscelaneas .next-off   { color:#666666;  display:block; float:left;  font-weight:bold; padding:3px 4px; }
+
+#pagination-miscelaneas .next a,
+#pagination-miscelaneas .previous a { font-weight:bold; border:solid 1px #FFFFFF; }
+#pagination-miscelaneas .active     { color:#001634; font-weight:bold; display:block; float:left;  padding:4px 6px; } /* Color del seleccionado */
+
+#pagination-miscelaneas a:link,
+#pagination-miscelaneas a:visited   { color:#999900;  display:block; float:left;  padding:3px 6px; text-decoration:none; } /* Color de las letras */
+#pagination-miscelaneas a:hover     { border:solid 1px #666666; }
+
+/* ------------------------------------------------------ */
+
+
+/* ---------------------------------------------------------- */
+/* ------------- Pagination: Espectaculos ------------------- */
+/* ---------------------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-espectaculos li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */  float:left; }
+#pagination-espectaculos a           { border:solid 1px #DDDDDD; margin-right:2px; }
+
+#pagination-espectaculos .previous-off,
+#pagination-espectaculos .next-off   { color:#666666;  display:block; float:left;  font-weight:bold; padding:3px 4px; }
+
+#pagination-espectaculos .next a,
+#pagination-espectaculos .previous a { font-weight:bold; border:solid 1px #FFFFFF; }
+#pagination-espectaculos .active     { color:#001634; font-weight:bold; display:block; float:left;  padding:4px 6px; } /* Color del seleccionado */
+
+#pagination-espectaculos a:link,
+#pagination-espectaculos a:visited   { color:#991C15;  display:block; float:left;  padding:3px 6px; text-decoration:none; } /* Color de las letras */
+#pagination-espectaculos a:hover     { border:solid 1px #666666; }
+
+/* ------------------------------------------------------ */
+
+
+/* ----------------------------------------------------- */
+/* ------------- Pagination: Todas --------------------- */
+/* ----------------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-todas li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */  float:left; }
+#pagination-todas a           { border:solid 1px #DDDDDD; margin-right:2px; }
+
+#pagination-todas .previous-off,
+#pagination-todas .next-off   { color:#666666;  display:block; float:left;  font-weight:bold; padding:3px 4px; }
+
+#pagination-todas .next a,
+#pagination-todas .previous a { font-weight:bold; border:solid 1px #FFFFFF; }
+#pagination-todas .active     { color:#001634; font-weight:bold; display:block; float:left;  padding:4px 6px; } /* Color del seleccionado */
+
+#pagination-todas a:link,
+#pagination-todas a:visited   { color:#000;  display:block; float:left;  padding:3px 6px; text-decoration:none; } /* Color de las letras */
+#pagination-todas a:hover     { border:solid 1px #666666; }
+
+/* ------------------------------------------------------ */
+
+
