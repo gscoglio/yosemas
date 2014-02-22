@@ -2,12 +2,7 @@
 	require_once('cnx.php');
 	require_once('funciones.php');
 	require_once('seguridad.php');
-	require_once('estado_preguntas.php');
 
-	$resp = preguntas($user_id, 1);
-	$preguntas = $resp[0];
-	$respuestas = $resp[1];
-	$premios = get_premios();
 	$novedades = get_novedades();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31,35 +26,6 @@
     </div>
     <div id="centro">
         <div id="subtitulo">&iquest;Sos el que m&aacute;s sabe de todo? &iexcl;Demostralo!</div>
-        <div id="video_index">
-        <img src="img/video.png" />
-        </div>
-        <div id="pregunta_index">
-        	<div class="info_pregunta">
-                <div class="titulo" style="border-bottom:2px solid <?php echo color($preguntas[0]['id_categoria']); ?>;">
-                    &iquest;<?php echo $preguntas[0]['pregunta']; ?>?
-                </div>
-                <div class="respuestas">
-                <?php for($j=0; $j < count($respuestas[0]); $j++){ ?>
-                <div class="opcion">
-                    <input type="radio" name="respuesta<?php echo $i; ?>" value="<?php echo $respuestas[0][$j]['id_respuesta']; ?>" />
-                    <?php echo $respuestas[0][$j]['respuesta']; ?>
-                </div>
-                <?php } ?>
-                </div>
-                <div class="responder color_<?php echo $preguntas[0]['id_categoria']; ?>" onclick="window.location='preguntas.php'">Responder</div>
-            </div>
-        </div>
-        <div id="premios_index" onclick="window.location='premios.php'">
-        	<span>Premios</span>
-        	<article class="novedad">
-                <img src="img/premios/<?php echo $premios[0]['imagen']; ?>" />
-                <div class="info">
-                    <div class="titulo"><?php echo $premios[0]['titulo']; ?></div>
-                    <div class="texto"><?php echo $premios[0]['texto']; ?></div>
-                </div>
-            </article>
-        </div>
         <div id="novedades_index" onclick="window.location='novedades.php'">
         	<span>Novedades</span>
         <?php

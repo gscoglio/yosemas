@@ -254,7 +254,7 @@ $(ids).mouseout(function(){
 	color_border = $(this).css('border-left-color');
 	if(color_border == color_over){
 		$(this).css('border-color',color_input);
-	}
+	} 
 });
 //FIN COLORES DE LOS INPUT
 
@@ -1038,7 +1038,7 @@ function eliminar_usuario_torneo(id_usuario, id_torneo){
 function validar_twitter(twitter){
 	var regex = /^@([A-Za-z0-9_]+)$/;		
 	if(!regex.test(twitter) && twitter != ''){
-		return 'El usuario de twitter ingresado no es v\u00e1lido.';
+		return 'El usuario de twitter debe ingresar con @';
 	}
 	else{
 		return 'ok';	
@@ -1063,7 +1063,7 @@ function validar_documento(numero){
 	}
 }
 function validar_nombre(nombre){
-	var regex = /^([a-zA-Z ]+)$/;
+	var regex = /^([a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+)$/;
 	if(!regex.test(nombre) && nombre != ''){
 		return 'El nombre ingresado no es v\u00e1lido.';
 	}
@@ -1072,7 +1072,7 @@ function validar_nombre(nombre){
 	}
 }
 function validar_apellido(apellido){
-	var regex = /^([a-zA-Z ]+)$/;
+	var regex = /^([a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+)$/;
 	if(!regex.test(apellido) && apellido != ''){
 		return 'El apellido ingresado no es v\u00e1lido.';
 	}

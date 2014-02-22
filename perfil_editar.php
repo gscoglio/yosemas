@@ -38,7 +38,7 @@
     	<form id="form_foto" enctype="multipart/form-data" action="operaciones.php" method="post">
         	<div id="marco_foto"><?php echo '<img src="fotos/'.$usuario_datos['foto'].'" />'; ?></div>
             <input type="button" name="cambiar_foto" class="btn_form" id="cambiar_foto" value="Cambiar Foto" />
-        	<input type="file" name="foto" id="foto" style="visibility:hidden;" />
+        	<input type="file" name="foto" id="foto" style="visibility:hidden;" accept="image/jpg, image/jpeg"/>
             <input type="hidden" name="operacion" value="2" />
         </form>
         <form id="form_perfil" action="operaciones.php" method="post">
@@ -60,7 +60,6 @@
                     <span class="error" id="error_pass2"></span><br />
                 </div>
             </div>
-            <div style="line-height:2px;">&nbsp;</div>
             <div class="bloque_input">
             <label class="bloque_datos" for="nombre">
             	<div class="ajuste"><span class="leyenda">Nombre: </span><input type="text" name="nombre" id="nombre" value="<?php echo ucwords(strtolower($usuario_datos['nombre'])); ?>" /></div>
@@ -73,7 +72,6 @@
             </label>
             <span class="error" id="error_apellido"></span><br />
             </div>
-            <div style="line-height:2px;">&nbsp;</div>
             <div class="bloque_input" id="bloque_mail">
                 <label for="email" id="email_label">
                     <div class="ajuste"><span class="leyenda" style="margin-right:10px;">E-mail: </span><input type="text" name="email" id="email" value="<?php echo $usuario_datos['email']; ?>" /></div>

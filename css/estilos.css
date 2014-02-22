@@ -595,7 +595,7 @@ ul
 {
 	font-weight:bold;
 	display:list-item;
-	margin:15px 0;
+	margin:5px 0;
 	font-size:14px;
 	list-style:none;
 }
@@ -655,17 +655,14 @@ ul
 }
 #centro #form_perfil .ajuste input
 {
-	float:right;
 }
 #centro #form_perfil .bloque_datos .ajuste
 {
 	width:220px;
-	float:left;
 	line-height:20px;
 }
 #centro #form_perfil #email_label
 {
-	float:left;
 }
 #centro #form_perfil #bloque_mail
 {
