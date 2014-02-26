@@ -26,6 +26,11 @@
     </div>
     <div id="centro">
         <div id="subtitulo">&iquest;Sos el que m&aacute;s sabe de todo? &iexcl;Demostralo!</div>
+        <br />
+        <div style="width: 450px; float: left">
+            <a class="twitter-timeline" href="https://twitter.com/yosemasquevos" data-widget-id="438465236719239168">Tweets por @yosemasquevos</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
         <div id="novedades_index" onclick="window.location='novedades.php'">
         	<span>Novedades</span>
         <?php
