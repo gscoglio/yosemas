@@ -17,7 +17,7 @@ else{
 			<label for="usuario">Usuario o email </label><input tabindex="1" maxlength="50" type="text" name="usuario" id="usuario" />
         </div>
         <div class="bloque">
-			<label for="pass">Contrase&ntilde;a </label><input tabindex="2" maxlength="8" type="password" name="pass" id="pass" />
+			<label for="pass">Contrase&ntilde;a </label><input tabindex="2" type="password" name="pass" id="pass" />
         </div>
     
     <div class="bloque">

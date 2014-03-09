@@ -29,7 +29,7 @@
         <?php
             if($user_id == 0){
         		echo '<form id="form_contacto" name="form_contacto" action="enviar_email.php" method="post" onsubmit="return validar_contacto()">';
-                echo '<label for="nombre">Nombre y Apellido </label><input id="nombre" name="nombre" type="text" /><span class="error" id="error_nombre"></span>';
+                echo '<label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" /><span class="error" id="error_nombre"></span>';
                 echo '<label for="email">E-mail </label><input id="email" name="email" type="text" /><span class="error" id="error_email"></span>';
             }
 			else{

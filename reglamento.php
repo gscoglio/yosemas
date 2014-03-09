@@ -35,13 +35,13 @@
                 Todas las preguntas tienen una fecha de caducidad. Una vez pasada esa fecha, no se podrá responder esa pregunta.
                 </p><br/>
                 <p><b>3. Asignación de puntos</b><br/>
-                Cada pregunta tendrá un valor de puntos asignados por el juego. El valor puede ser desde 1 hasta 500 puntos. <br/>
-                Las preguntas serán divididas en cuatro categorías. El valor total de las preguntas durante el periodo de un mes será de 2000 puntos, a razón de 500 puntos por categoría.
+                Cada pregunta tendrá un valor de puntos asignados por el juego. El valor puede ser desde 1 hasta 500 puntos por pregunta. <br/>
+                Las preguntas serán divididas en cuatro categorías: “Espectaculos”, “Deportes”, “Politica y Economia” y “Miscelaneas”. El valor total de todas las preguntas de cada categoría será de 500 puntos en el mes, sumando un total de 2000 puntos entre las cuatro categorías.
                 </p><br/>
                 <p><b>4. ¿Cómo participar?</b><br/>
                 Para participar del Juego deben llenarse los datos que se solicitan en el Sitio Web y aceptando los términos y condiciones.<br/>
                 Los Participantes deberán cumplir con todo lo dispuesto en el reglamento, en los términos y condiciones y sus eventuales modificaciones durante toda la vigencia del Juego. Caso contrario, podrá ser dado de baja del Juego, no pudiendo reclamar ningún rubro en concepto de indemnización a la organización o auspiciantes del juego.<br/>
-                Cualquier persona con residencia en la República Argentina podrá participar. Solo podrán ganar premios los participantes mayores de 18 años.
+                Cualquier persona con residencia en la República Argentina podrá participar. En caso que el Juego decida entrar premios, solo podrán ganarlos aquellos participantes mayores de 18 años.
                 </p><br/>
                 <p><b>4.1. Falsedad de la información registrada</b><br/>
                 En caso de que Yosemasquevos verifique que la información registrada por un participante es falsa y/o presuma razonablemente que la misma ha sido falsificada, podrá a su exclusivo criterio, y sin derecho a reclamo alguno por parte de ningún participante del juego, cancelar el registro y la inscripción correspondiente.<br/>
@@ -54,8 +54,7 @@
                 Todo participante que autorice a Yosemasquevos a recibir información acerca de terceros deberá expresarlo en el Sitio Web, seleccionando la opción adecuada en la ficha de registración. El participante podrá dejar de recibir dicha información seleccionando la opción adecuada en el Sitio Web.
                 </p><br/>
                 <p><b>5. Premios</b><br/>
-                Los premios correspondientes al Campeón del Mes, Año o cualquier otro premio adicional que puediera surgir serán definidos y comunicados por Yosemasquevos.
-                En caso que el ganador no haya podido ser localizado en 90 días, no podrá ser acreedor del premio ni realizar reclamo alguno.<br/>
+                Los eventuales premios correspondientes al Campeón del Mes, Año o cualquier otro premio adicional que puediera surgir serán definidos y comunicados por Yosemasquevos. En caso que el ganador no haya podido ser localizado en 90 días, no podrá ser acreedor del premio ni realizar reclamo alguno.<br/>
                 Yosemasquevos se reserva el derecho de modificar o eliminar premios sin previo aviso.<br/>
                 </p><br/>
                 <p><b>6. Empates</b><br/>

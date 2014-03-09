@@ -28,7 +28,7 @@
             <p><b>¿Cómo registrarse?</b><br/>
             Ingresá en <a href="registrar.php">registro</a> y completá tus datos.</p><br/>
             <p><b>¿Qué pasa si pongo un DNI falso?</b><br/>
-            No vas a poder cobrar premios y además podrías ser expulsado del juego.</p><br/>
+            En caso que el Juego entregue premios a los ganadores, no vas a poder cobrarlos ni tendrás derecho a reclamo alguno.</p><br/>
             <p><b>Perdí mi contraseña ¿Cómo la recupero?</b><br/>
             Completa tu email <a href="recuperarpass.php">acá</a> y te la enviamos a tu correo electrónico.</p><br/>
             <p><b>¿Cómo contesto preguntas?</b><br/>
@@ -42,7 +42,11 @@
             <p><b>¿Qué pasa si el premio no está disponible en el lugar donde vivo?</b><br/>
             Yosemasquevos no se hace responsable de la disponibilidad de los premios en toda la República Argentina.</p><br/>
             <p><b>¿Qué es un Torneo?</b><br/>
-            Es el mismo juego de Yosemasquevos, pero en lugar de competir contra todos los participantes, solamente lo haces contra tus amigos.</p><br/>
+            Es el mismo juego de Yosemasquevos, pero en lugar de competir contra todos los participantes, solamente lo haces contra tus amigos.<br/>
+            El administrador (creador) del torneo no puede enviar invitaciones. Para jugar en un Torneo, hay que buscarlo por nombre y solicitar permiso.<br/>
+            El administrador podrá aceptar (o no) a los usuarios que quieran participar en su torneo.<br/>
+            Todos los usuarios pueden crear Torneos.<br/>
+            No hay límite de cantidad de Torneos creados por usuario.</p><br/>
         </section>
     </div>
     <footer id="footer">

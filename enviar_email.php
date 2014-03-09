@@ -12,12 +12,9 @@ $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $mail_usuario\r\n";
 
-$mail_enviado = @mail($to, $asunto, $message, $headers);
-////
-
-if($mail_enviado){
-	header( 'Location: contacto.php?enviado=OK' );
-}else{
-	header( 'Location: contacto.php?enviado=error' );	
-};
-?>
+try {
+    mail($to, $asunto, $message, $headers);
+} catch (Exception $exc) {
+    header( 'Location: contacto.php?enviado=error' );
+}
+header( 'Location: contacto.php?enviado=OK' );

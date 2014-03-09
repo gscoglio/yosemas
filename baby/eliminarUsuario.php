@@ -146,8 +146,9 @@ elseif($idEstado==1){
 
 ?>
 
-  <h1>¡El Usuario ha sido eliminado con éxito!</h1>
-  <img src="Imagenes/images.jpg">
+  <h1>El usuario ahora está 
+      <?php  if ($idEstado==0){ echo "activo"; } else { echo "inactivo"; } ?>
+  </h1>
 
 <DIV class="demo"  align="center">
     

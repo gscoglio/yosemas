@@ -83,9 +83,6 @@
             <input type="hidden" name="foto_usuario" id="foto_usuario" value="default_avatar.jpg" />
             <input type="hidden" name="operacion" value="7" />
         </form>
-        <div id="nota_registro">
-        	<img src="img/importante_register.png" />
-        </div>
     </div>
     <footer id="footer">
     	<?php include('inc/footer.php'); ?>
