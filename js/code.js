@@ -842,20 +842,30 @@ function validar_perfil(){
 //FIN VALIDAR CAMBIOS PERFIL
 
 //VALIDAR SUGERIR PREGUNTA
-function validar_sugerir(){
+function enviar_sugerencia(){
 	var categoria = $('#form_sugerir select option:selected').val();
 	var texto = $('#form_sugerir #pregunta').val();
 	if(categoria == 0){
 		alert('Eleg\u00ed una categor\u00eda.');
-		return false;	
+		return false;
 	}
 	if(texto == ''){
 		alert('Escrib\u00ed una pregunta.');
 		return false;
 	}
-	alert('La pregunta ha sido enviada con \u00e9xito.\nGracias por tu sugerencia.');
-	$('#form_sugerir #pregunta').val('');
-	$('#form_sugerir select option[value=0]').attr('selected',true);
+        $("#form_sugerir #enviar").attr("disabled", "disabled");
+        $("#enviando_pregunta").removeAttr("hidden");
+        $.ajax({
+            type: "POST",
+            url: "enviar_email3.php",
+            data: { 'categoria': categoria, 'texto': texto}
+            }).done(function() {
+                    alert('La pregunta ha sido enviada con \u00e9xito.\nGracias por tu sugerencia.');
+                    $('#form_sugerir #pregunta').val('');
+                    $('#form_sugerir select option[value=0]').attr('selected',true);
+                    $("#enviando_pregunta").attr("hidden", true);
+                    $("#form_sugerir #enviar").removeAttr("disabled");
+        });	
 }
 
 //ARMA LAS GRILLAS DE TORNEOS

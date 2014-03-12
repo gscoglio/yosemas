@@ -33,7 +33,8 @@
             <div id="sugerir_pregunta">
                 <div class="titulo">Sugerinos una Pregunta</div>
                 <form id="form_sugerir" name="form_sugerir" action="" method="post">
-                    <label for="categoria" id="etiqueta">Categor&iacute;a: </label><select id="categoria" name="categoria" size="1" onchange="var x = $('#categoria_val').val();categoria(x)">
+                    <label for="categoria" id="etiqueta">Categor&iacute;a: </label>
+                    <select id="categoria" name="categoria" size="1" >
                         <option value="0"></option>
                         <?php
                         $categoria = get_categoria();
@@ -46,7 +47,8 @@
                         ?>
                     </select>
                     <textarea id="pregunta" name="pregunta" ></textarea>
-                    <input id="enviar" name="enviar" class="btn_form" type="button" value="Enviar" onclick="validar_sugerir()" />
+                    <p id="enviando_pregunta" hidden>Enviando pregunta... </p>
+                    <input id="enviar" name="enviar" class="btn_form" type="button" value="Enviar" onclick="enviar_sugerencia()"/>
                 </form>
             </div>
         </section>
