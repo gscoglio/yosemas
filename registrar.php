@@ -18,6 +18,7 @@
 <link type="text/css" rel="stylesheet" href="css/datepicker.css" />
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 <div id="contenido">
 	<header id="header">
     	<?php include('inc/header.php'); ?>

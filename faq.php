@@ -15,6 +15,7 @@
 <link type="text/css" rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 <div id="contenido">
 	<header id="header">
     	<?php include('inc/header.php'); ?>
