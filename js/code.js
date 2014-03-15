@@ -511,48 +511,6 @@ function validar_registrar(){
 		error = 1;
 	}
 	
-	//VALIDO NOMBRE
-	if(nombre != ""){
-		var result = validar_nombre(nombre);
-		if(result != 'ok'){
-			$('#form_registro #nombre').css('border-color',color_error);
-			$('#form_registro #error_nombre').html(result5);
-			$('#form_registro #error_nombre').fadeIn();
-			error = 1;	
-		}
-		else{
-			$('#form_registro #error_nombre').css('display','none');
-			$('#form_registro #nombre').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #nombre').css('border-color',color_error);
-		$('#form_registro #error_nombre').html("Complet\u00e1 tu nombre.");
-		$('#form_registro #error_nombre').fadeIn();
-		error = 1;
-	}
-	
-	//VALIDO APELLIDO
-	if(apellido != ""){
-		var result = validar_apellido(apellido);
-		if(result != 'ok'){
-			$('#form_registro #apellido').css('border-color',color_error);
-			$('#form_registro #error_apellido').html(result6);
-			$('#form_registro #error_apellido').fadeIn();
-			error = 1;	
-		}
-		else{
-			$('#form_registro #error_apellido').css('display','none');
-			$('#form_registro #apellido').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #apellido').css('border-color',color_error);
-		$('#form_registro #error_apellido').html('Complet\u00e1 tu apellido.');
-		$('#form_registro #error_apellido').fadeIn();
-		error = 1;
-	}
-	
 	//VALIDO NACIMIENTO
 	if($('#form_registro #nacimiento').val() == $('#form_registro #hoy').val()){
 		$('#form_registro #nacimiento').css('border-color',color_error);
@@ -577,81 +535,6 @@ function validar_registrar(){
 		$('#form_registro #error_terminos').html('Para continuar debes leer y aceptar los t\u00e9rminos y condiciones.');
 		$('#form_registro #error_terminos').fadeIn();
 		error = 1;
-	}
-	
-	//VALIDO DOCUMENTO
-	if(dni != ""){
-		var result = validar_documento(dni);
-		if(result != 'ok'){
-			$('#form_registro #dni').css('border-color',color_error);
-			$('#form_registro #error_dni').html(result);
-			$('#form_registro #error_dni').fadeIn();
-			error = 1;	
-		}
-		else{
-			$('#form_registro #error_dni').css('display','none');
-			$('#form_registro #dni').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #dni').css('border-color',color_error);
-		$('#form_registro #error_dni').html('Complet\u00e1 tu n\u00famero de documento.');
-		$('#form_registro #error_dni').fadeIn();
-		error = 1;
-	}
-	
-	//VALIDO TWITTER
-	if(twitter != ""){
-		var result = validar_twitter(twitter);
-		if(result != 'ok'){
-			$('#form_registro #twitter').css('border-color',color_error);
-			$('#form_registro #error_twitter').html(result);
-			$('#form_registro #error_twitter').fadeIn();
-			error = 1;
-		}
-		else{
-			$('#form_registro #error_twitter').css('display','none');
-			$('#form_registro #twitter').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #twitter').css('border-color',color_input);
-	}
-	
-	//VALIDO TELEFONO
-	if(telefono != ""){
-		var result = validar_telefono(telefono);
-		if(result != 'ok'){
-			$('#form_registro #telefono').css('border-color',color_error);
-			$('#form_registro #error_telefono').html(result);
-			$('#form_registro #error_telefono').fadeIn();
-			error = 1;	
-		}
-		else{
-			$('#form_registro #error_telefono').css('display','none');
-			$('#form_registro #telefono').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #telefono').css('border-color',color_input);
-	}
-	
-	//VALIDO CELULAR
-	if(celular != ""){
-		var result = validar_telefono(celular);
-		if(result != 'ok'){
-			$('#form_registro #celular').css('border-color',color_error);
-			$('#form_registro #error_celular').html(result);
-			$('#form_registro #error_celular').fadeIn();
-			error = 1;	
-		}
-		else{
-			$('#form_registro #error_celular').css('display','none');
-			$('#form_registro #celular').css('border-color',color_ok);
-		}
-	}
-	else{
-		$('#form_registro #celular').css('border-color',color_input);
 	}
 	
 	if(error == 1){
@@ -717,12 +600,6 @@ function validar_perfil(){
 			$('#form_perfil #nombre').css('border-color',color_ok);
 		}
 	}
-	else{
-		$('#form_perfil #nombre').css('border-color',color_error);
-		$('#form_perfil #error_nombre').html("Complet\u00e1 tu nombre.");
-		$('#form_perfil #error_nombre').fadeIn();
-		error = 1;
-	}
 	
 	//VALIDO APELLIDO
 	if(apellido != ""){
@@ -737,12 +614,7 @@ function validar_perfil(){
 			$('#form_perfil #apellido').css('border-color',color_ok);
 		}
 	}
-	else{
-		$('#form_perfil #apellido').css('border-color',color_error);
-		$('#form_perfil #error_apellido').html('Complet\u00e1 tu apellido.');
-		$('#form_perfil #error_apellido').fadeIn();
-		error = 1;
-	}
+
 	//VALIDO E-MAIL
 	if(email != ""){
 		if(result7 != 'ok'){

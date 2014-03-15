@@ -124,7 +124,7 @@ function validaCantidadRespuestas(){
 	$question=""; $point=""; $category=""; $from=""; $to=""; $start=""; $end="";
 	$reply1=""; $reply2=""; $reply3=""; $reply4=""; $reply5=""; $reply6="";$reply7=""; $reply8=""; 	
 
-// Verifica que se halla apretado el boton
+// Verifica que se haya apretado el boton
 if(isset($_POST['cargarPregunta'])){
 	
 		if(!validaPregunta($_POST['pregunta']))

@@ -606,6 +606,7 @@ ul
 }
 #centro #form_perfil label .leyenda
 {
+        margin-right:10px;
 	font-weight:bold;
 	font-size:14px;
 	float:left
@@ -658,7 +659,6 @@ ul
 }
 #centro #form_perfil .bloque_datos .ajuste
 {
-	width:220px;
 	line-height:20px;
 }
 #centro #form_perfil #email_label

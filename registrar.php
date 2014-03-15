@@ -43,10 +43,6 @@
             <span class="error" id="error_pass2"></span>
             <label for="email">E-mail: </label><input type="text" name="email" id="email" />
             <span class="error" id="error_email"></span>
-        	<label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" />
-            <span class="error" id="error_nombre"></span>
-            <label for="apellido">Apellido: </label><input type="text" name="apellido" id="apellido" />
-            <span class="error" id="error_apellido"></span>
             <label for="pick_date">Fecha de nacimiento: </label>
             <input type="text" name="nacimiento" style="color:#fff;" id="nacimiento" value="<?php echo date('d/m/Y'); ?>" />
             <span class="error" id="error_nacimiento"></span>
@@ -56,8 +52,6 @@
                 <option value="M">Masculino</option>
             </select>
             <span class="error" id="error_sexo"></span>
-            <label for="dni">DNI: </label><input type="text" name="dni" id="dni" />
-            <span class="error" id="error_dni"></span>
             <label for="provincia">Provincia: </label>
             <select id="provincia" name="provincia" size="1" onchange="set_localidades()">
                 <?php
@@ -72,12 +66,6 @@
             </select>
             <span class="error" id="error_provincia"></span>
             <label for="localidad">Localidad: </label><select id="localidad" name="localidad" size="1"></select>
-            <label for="twitter">Twitter <span class="opcional">(opcional)</span>: </label><input type="text" name="twitter" id="twitter" />
-            <span class="error" id="error_twitter"></span>
-            <label for="telefono">Tel&eacute;fono <span class="opcional">(opcional)</span>: </label><input type="text" name="telefono" id="telefono"/>
-            <span class="error" id="error_telefono"></span>
-            <label for="celular">Celular <span class="opcional">(opcional)</span>: </label><input type="text" name="celular" id="celular"/>
-            <span class="error" id="error_celular"></span>
             <label for="terminos"><input type="checkbox" name="terminos" id="terminos" /> Acepto los <a href="reglamento.php">t&eacute;rminos y condiciones.</a><span class="error" id="error_terminos"></span></label>
             <input type="submit" name="enviar" id="enviar" class="btn_form" value="Enviar" />
             <input type="hidden" id="hoy" name="hoy" value="<?php echo date('d/m/Y'); ?>" />

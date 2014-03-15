@@ -47,7 +47,7 @@ else{
 };
 $hoy = date('Y-m-d');
 
-switch($operacion){
+switch($operacion){    
 	case 1: //MUESTRA LAS PREGUNTAS
 		$resp = preguntas($user_id, $categoria);
 		$preguntas = $resp[0];
@@ -190,7 +190,7 @@ switch($operacion){
 		if($result){
 			break;
 		}
-		if(($nick == '') || ($pass == '') || ($email == '') || ($nombre == '') || ($apellido == '') || ($sexo == '') || ($nacimiento == '') || ($dni == '') || ($provincia == '') || ($localidad == '') || ($foto_usuario == '')){
+		if(($nick == '') || ($pass == '') || ($email == '')  || ($sexo == '') || ($nacimiento == '') || ($provincia == '') || ($localidad == '') || ($foto_usuario == '')){
 			break;
 		}
 		mysql_("INSERT INTO usuarios (usuario, pass, email, estado) VALUES ('$nick', '$pass', '$email', 1)");

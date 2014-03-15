@@ -75,21 +75,23 @@
             </div>
             <div class="bloque_input" id="bloque_mail">
                 <label for="email" id="email_label">
-                    <div class="ajuste"><span class="leyenda" style="margin-right:10px;">E-mail: </span><input type="text" name="email" id="email" value="<?php echo $usuario_datos['email']; ?>" /></div>
+                    <div class="ajuste"><span class="leyenda" >E-mail: </span><input type="text" name="email" id="email" value="<?php echo $usuario_datos['email']; ?>" /></div>
                 </label>
                 <span class="error" id="error_email"></span><br />
             </div>
             <label>
             	Fecha de nacimiento: <span><?php echo $nacimiento; ?></span>
             </label>
+            <br />
             <label>
             	Sexo: <span><?php echo ucwords($usuario_datos['sexo']); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                DNI: <span><?php echo $usuario_datos['dni']; ?></span>
             </label>
+            <br />
             <label>
             	Provincia: <span><?php echo utf8_decode($usuario_datos['provincia']); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
                 Localidad: <span><?php echo ucwords(strtolower($usuario_datos['localidad'])); ?></span>
             </label>
+            <br />
             <div class="bloque_input">
             <label class="bloque_datos" for="twitter">
             	<div class="ajuste"><span class="leyenda">Twitter: </span>
@@ -102,7 +104,7 @@
 				}
                 echo '" />';
                 ?>
-            </div>
+                </div>
             </label>
             <span class="error" id="error_twitter"></span><br />
             </div>

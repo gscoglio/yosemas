@@ -9,6 +9,6 @@
     </ul>
 </nav>
 <div id="face_tweet">
-	<a href="https://www.facebook.com/pages/YoSeM%C3%A1sQueVos/392133277489340" target="_blank"><img src="img/facebook_grey.png" alt="facebook" /></a>
+	<a href="https://www.facebook.com/yosemasquevos" target="_blank"><img src="img/facebook_grey.png" alt="facebook" /></a>
     <a href="http://twitter.com/yosemasquevos" target="_blank"><img src="img/twitter_grey.png" alt="twitter" /></a>
 </div>
