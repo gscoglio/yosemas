@@ -132,7 +132,7 @@ if (isset($_POST['admin']) && $_POST['admin'] != "") {
                     
      <td width="15%">
 		<div id="redesSociales">
-            <a href="http://www.facebook.com" target="_blank">
+            <a href="https://www.facebook.com/yosemasquevos" target="_blank">
             <img src="img/face1.png" alt="Seguinos en Facebook" title="Seguinos en Facebook"  onmouseover="this.src='img/face2.png';" 
             onmouseout="this.src='img/face1.png';"/> 
             </a>
