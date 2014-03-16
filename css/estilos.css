@@ -440,11 +440,25 @@ ul
 	padding:10px 20px 20px 20px;
 	margin-top:20px;
 }
+#centro #datos_usuario #filtrar_por_mes
+{
+	background-color:#67c184;
+	width:190px;
+	padding:10px 20px 20px 20px;
+	margin-top:20px;
+}
 #centro #datos_usuario #filtrar_por_provincia #provincia
 {
 	width:190px;
 }
 #centro #datos_usuario #filtrar_por_provincia .titulo, #centro #datos_usuario #sugerir_pregunta .titulo
+{
+	margin-bottom:10px;
+	font-size:16px;
+	font-weight:bold;
+	color:#fff;
+}
+#centro #datos_usuario #filtrar_por_mes .titulo, #centro #datos_usuario #sugerir_pregunta .titulo
 {
 	margin-bottom:10px;
 	font-size:16px;

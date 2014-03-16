@@ -13,6 +13,8 @@ if(isset($_POST['categoria'])){$categoria = $_POST['categoria'];}
 if(isset($_POST['id_pregunta'])){$id_pregunta = $_POST['id_pregunta'];}
 if(isset($_POST['id_respuesta'])){$id_respuesta = $_POST['id_respuesta'];}
 if(isset($_POST['id_provincia'])){$id_provincia = $_POST['id_provincia'];}
+if(isset($_POST['id_mes'])){$id_mes = $_POST['id_mes'];}
+if(isset($_POST['id_anio'])){$id_anio = $_POST['id_anio'];}
 if(isset($_POST['id_torneo'])){$id_torneo = $_POST['id_torneo'];}
 if(isset($_POST['id_usuario'])){$id_usuario = $_POST['id_usuario'];}
 if(isset($_POST['foto_usuario'])){$foto_usuario = $_POST['foto_usuario'];}
@@ -443,7 +445,11 @@ switch($operacion){
 	break;
 	
 	case 18: //RANKING
-		$ranking = ranking($categoria, $id_provincia);	
+            if ($id_mes != "00" || $id_anio != "00") {
+                $ranking = rankingMensual($categoria, $id_provincia, $id_mes, $id_anio);
+            } else {
+                $ranking = ranking($categoria, $id_provincia);                
+            }
 		echo '<div id="top50">TOP 50</div>';
 		echo ' <ul class="titulo">
 			<li style="margin-right:10px">#</li>

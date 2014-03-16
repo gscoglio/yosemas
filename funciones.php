@@ -239,6 +239,56 @@ function ranking($categoria, $id_provincia = 0){
 	}
 	return 	$result;
 }
+
+function rankingMensual($categoria, $id_provincia = 0, $id_mes = "00", $id_anio = "00"){
+    
+        $query = 'SELECT u.id, sum(puntos) as puntos, u.usuario, prov.provincia 
+                    FROM preguntas p 
+                    INNER JOIN respuestas r 
+                    INNER JOIN respuestas_usuarios ru 
+                    INNER JOIN usuarios u 
+                    INNER JOIN datos_usuarios du 
+                    INNER JOIN provincias prov 
+                    WHERE p.id = r.id_pregunta 
+                        AND ru.id_pregunta = p.id 
+                        AND ru.id_respuesta = r.id 
+                        AND ru.id_usuario = u.id 
+                        AND u.id = du.id_usuario 
+                        AND du.id_provincia = prov.id
+                        AND r.correcta = 1 ';
+    
+        if (isset($categoria) && $categoria != "1") {
+            $query .= "AND p.id_categoria = $categoria ";
+        }
+    
+        if ($id_provincia != 0){
+            $query .= "AND prov.id = $id_provincia ";	
+	}
+        
+        if ($id_mes != "00"){
+            $query .= 'AND p.mes = "' . $id_mes . '" ';	
+	}
+        
+        if ($id_anio != "00"){
+            $query .= 'AND p.anio = "' . $id_anio . '" ';	
+	}
+        
+        $query .= 'GROUP BY u.id ';
+        $query .= "ORDER BY 2 DESC LIMIT 50";
+        
+        $result = rows_($query);
+        
+	$porcentaje_usuarios = get_porcentaje_correctas($result);
+	
+	$cant = count($result);
+	$i=0;
+	while($i < $cant){
+		$result[$i]['porcentaje'] = (round($porcentaje_usuarios[$i], 4)*100).'%';
+		$i++;
+	}
+	return 	$result;
+}
+
 function get_porcentaje_correctas($result){
 	$cant = count($result);
 	$porcentaje_usuarios = array();

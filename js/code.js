@@ -173,12 +173,14 @@ function categoria(categoria)
 		var operacion = 18;
 		var id = '#centro #ranking #ranking_grill';
 		var id_provincia = $('#filtrar_por_provincia select option:selected').val();
+                var id_mes = $('#filtrar_por_mes_select option:selected').val();
+                var id_anio = $('#filtrar_por_anio_select option:selected').val();
 		$('#categoria_val').val(categoria);
 	}
 	$.ajax({
 		type: "POST",
 		url: "operaciones.php",
-		data: { 'operacion': operacion, 'categoria': categoria, 'id_provincia': id_provincia }
+		data: { 'operacion': operacion, 'categoria': categoria, 'id_provincia': id_provincia, 'id_mes': id_mes, 'id_anio': id_anio }
 		}).done(function(msg) {
 			$(id).html(msg);
 			grilla(5,50,'ranking_grill');

@@ -42,6 +42,30 @@
                     ?>
                 </select>
             </div>
+            <div id="filtrar_por_mes">
+                <div class="titulo">Filtrar por Mes</div>
+                <select id="filtrar_por_mes_select" name="mes" onchange="var x = $('#categoria_val').val();categoria(x)">
+                	<option value="00">Todos</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>                    
+                </select>
+                <select id="filtrar_por_anio_select" name="anio" onchange="var x = $('#categoria_val').val();categoria(x)">
+                	<option value="00">Todos</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>                        
+                </select>
+            </div>
         </section>
         <nav>
 			<?php include('inc/btn_categorias.php'); ?>
