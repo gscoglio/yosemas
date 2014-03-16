@@ -158,6 +158,8 @@ if(isset($_POST['cargarPregunta'])){
 		$point=$_POST['puntos'];
 		$category=$_POST['categoria'];
 		$autor=$_POST['autor'];
+                $mes=$_POST['mesPregunta'];
+                $anio=$_POST['anioPregunta'];
 		if(isset($_POST['from']) && $_POST['from']!=""){
 			$from=$_POST['from'];
 			$from_insert=explode('/',$from);
@@ -405,7 +407,38 @@ $hoy = date('d/m/Y h:m:i');
              border-radius: 2px; border: 1px solid #222222;"></div> -->
       </td>
     </tr>
-    
+      
+    <tr>
+      <td colspan="2" align="center">Mes al que pertenece:</td>
+      <td >
+        <select id="mesPregunta" name="mesPregunta">
+            <option value="01" <?php if (date("m")=="01") { echo "selected"; } ?> >Enero</option>
+            <option value="02" <?php if (date("m")=="02") { echo "selected"; } ?> >Febrero</option>
+            <option value="03" <?php if (date("m")=="03") { echo "selected"; } ?> >Marzo</option>
+            <option value="04" <?php if (date("m")=="04") { echo "selected"; } ?> >Abril</option>
+            <option value="05" <?php if (date("m")=="05") { echo "selected"; } ?> >Mayo</option>
+            <option value="06" <?php if (date("m")=="06") { echo "selected"; } ?> >Junio</option>
+            <option value="07" <?php if (date("m")=="07") { echo "selected"; } ?> >Julio</option>
+            <option value="08" <?php if (date("m")=="08") { echo "selected"; } ?> >Agosto</option>
+            <option value="09" <?php if (date("m")=="09") { echo "selected"; } ?> >Septiembre</option>
+            <option value="10" <?php if (date("m")=="10") { echo "selected"; } ?> >Octubre</option>
+            <option value="11" <?php if (date("m")=="11") { echo "selected"; } ?> >Noviembre</option>
+            <option value="12" <?php if (date("m")=="12") { echo "selected"; } ?> >Diciembre</option>
+        </select> 
+      </td>
+      
+      <td align="center">Año al que pertenece:</td>
+      <td colspan="2">
+        <select id="anioPregunta" name="anioPregunta">
+          <option value="<?php echo (date("Y") - 1); ?>" ><?php echo (date("Y") - 1); ?></option>
+          <option value="<?php echo date("Y"); ?>" selected ><?php echo date("Y"); ?></option>
+          <option value="<?php echo (date("Y") + 1); ?>" ><?php echo (date("Y") + 1); ?></option>
+          <option value="<?php echo (date("Y") + 2); ?>" ><?php echo (date("Y") + 2); ?></option>
+          <option value="<?php echo (date("Y") + 3); ?>" ><?php echo (date("Y") + 3); ?></option>
+        </select> 
+      </td>
+    </tr>  
+      
     </table>
     
     <h2>Carga de Respuestas</h2>
@@ -536,8 +569,8 @@ $hoy = date('d/m/Y h:m:i');
 	$pregunta = mysql_real_escape_string($question);  // Elimina caracteres especiales de una cadena
     $pregunta = trim($pregunta); 
 	
-	$reg = mysql_query("INSERT INTO preguntas (pregunta, puntos, id_categoria, autor, fecha_inicio, fecha_fin, estado) VALUES 
-	('".$question."', '".$point."', '".$category."', '".$autor."', '".$fechaComienzo."', '".$fechaFin."', '".$estado."')"); 
+	$reg = mysql_query("INSERT INTO preguntas (pregunta, puntos, id_categoria, autor, fecha_inicio, fecha_fin, estado, mes, anio) VALUES 
+	('".$question."', '".$point."', '".$category."', '".$autor."', '".$fechaComienzo."', '".$fechaFin."', '".$estado."', '".$mes."', '".$anio."')"); 
 	
 	// selecciono el ultimo id ingresado 
 	$idPregunta= mysql_insert_id();
