@@ -716,7 +716,7 @@ function validar_perfil(){
 //FIN VALIDAR CAMBIOS PERFIL
 
 //VALIDAR SUGERIR PREGUNTA
-function enviar_sugerencia(){
+function enviar_sugerencia(user){
 	var categoria = $('#form_sugerir select option:selected').val();
 	var texto = $('#form_sugerir #pregunta').val();
 	if(categoria == 0){
@@ -732,7 +732,7 @@ function enviar_sugerencia(){
         $.ajax({
             type: "POST",
             url: "enviar_email3.php",
-            data: { 'categoria': categoria, 'texto': texto}
+            data: { 'categoria': categoria, 'texto': texto, 'usuario': user}
             }).done(function() {
                     alert('La pregunta ha sido enviada con \u00e9xito.\nGracias por tu sugerencia.');
                     $('#form_sugerir #pregunta').val('');

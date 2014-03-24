@@ -1,7 +1,7 @@
 <nav id="botonera_footer">
 	<ul>
     	<li><a href="reglamento.php">Reglamento</a></li>
-        <li><a href="faq.php">FAQ</a></li>
+        <li><a href="faq.php">Preguntas Frecuentes</a></li>
         <li><a href="contacto.php">Contacto</a></li>
     </ul>
 </nav>

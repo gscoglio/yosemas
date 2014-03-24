@@ -158,7 +158,9 @@ switch($operacion){
 		while($localidades = mysql_fetch_assoc($rs)){
 			static $i = 0;
 			$i++;
-			echo '<option value="'.$localidades['id'].'">'.ucwords(strtolower($localidades['nombre_ciudad'])).'</option>';
+                        $nombreCiudad = ucwords(strtolower($localidades['nombre_ciudad']));
+                        $nombreCiudadEnie = str_replace("Ñ", "ñ", $nombreCiudad);
+			echo '<option value="' . $localidades['id'] . '">' . $nombreCiudadEnie . '</option>';
 		};
 	break;
 	
@@ -448,9 +450,10 @@ switch($operacion){
             if ($id_mes != "00" || $id_anio != "00") {
                 $ranking = rankingMensual($categoria, $id_provincia, $id_mes, $id_anio);
             } else {
-                $ranking = ranking($categoria, $id_provincia);                
+                $ranking = ranking($categoria, $id_provincia);
             }
-		echo '<div id="top50">TOP 50</div>';
+            if (! empty($ranking)) {
+                echo '<div id="top50">TOP 50</div>';
 		echo ' <ul class="titulo">
 			<li style="margin-right:10px">#</li>
 			<li>Nombre</li>
@@ -470,6 +473,10 @@ switch($operacion){
 			</ul>';
 			$i++;
 		}
+            } else {
+                echo '<div id="noHayResultados">No hay resultados para este período</div>';
+            }
+		
 	break;
 }
 ?>

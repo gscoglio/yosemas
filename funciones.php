@@ -48,19 +48,20 @@ function curPageName(){
 
 function perfil($id){
 	$query = "SELECT Us.id, Us.usuario, DU.foto, Pu.puntos, Pr.provincia FROM usuarios Us
-				INNER JOIN datos_usuarios DU ON DU.id_usuario = Us.id 
-				INNER JOIN puntaje Pu ON Pu.id_usuario = Us.id
-				INNER JOIN provincias Pr ON Pr.id = DU.id_provincia
-				WHERE Us.id = $id AND Pu.id_categoria = 1";
+                    INNER JOIN datos_usuarios DU ON DU.id_usuario = Us.id 
+                    INNER JOIN puntaje Pu ON Pu.id_usuario = Us.id
+                    INNER JOIN provincias Pr ON Pr.id = DU.id_provincia
+                    WHERE Us.id = $id AND Pu.id_categoria = 1";
 				
 	$rs = mysql_($query);
 	$row_perfil = mysql_fetch_assoc($rs);
 	$puntos = $row_perfil['puntos'];
 	
 	$query = "SELECT Pu.id_usuario, Pu.puntos, Pr.provincia FROM puntaje Pu
-				INNER JOIN datos_usuarios DU ON DU.id_usuario = Pu.id_usuario  
-				INNER JOIN provincias Pr ON Pr.id = DU.id_provincia 
-				WHERE Pu.id_categoria = 1 ORDER BY puntos DESC";
+                    INNER JOIN datos_usuarios DU ON DU.id_usuario = Pu.id_usuario  
+                    INNER JOIN provincias Pr ON Pr.id = DU.id_provincia 
+                    WHERE Pu.id_categoria = 1 
+                    ORDER BY puntos DESC, id_usuario";
 				
 	$rs = mysql_($query);		
 
@@ -219,23 +220,23 @@ function usuario_datos($user_id){
 }
 function ranking($categoria, $id_provincia = 0){
 	$query = "SELECT Us.id, Us.usuario, Pr.provincia, Pu.puntos FROM usuarios Us
-					INNER JOIN puntaje Pu ON Pu.id_usuario = Us.id
-					INNER JOIN datos_usuarios DU ON DU.id_usuario = Us.id
-					INNER JOIN provincias Pr ON Pr.id = DU.id_provincia
-					WHERE Us.estado = 1 AND Pu.id_categoria = $categoria";
+                    INNER JOIN puntaje Pu ON Pu.id_usuario = Us.id
+                    INNER JOIN datos_usuarios DU ON DU.id_usuario = Us.id
+                    INNER JOIN provincias Pr ON Pr.id = DU.id_provincia
+                    WHERE Us.estado = 1 AND Pu.id_categoria = $categoria";
 	if($id_provincia != 0){
-		$query .= " AND Pr.id = $id_provincia";	
+            $query .= " AND Pr.id = $id_provincia";	
 	}
-	$query .= " ORDER BY Pu.puntos DESC LIMIT 50";
+	$query .= " ORDER BY Pu.puntos DESC, id LIMIT 50";
 	
 	$result = rows_($query);
-	$porcentaje_usuarios = get_porcentaje_correctas($result);
+	$porcentaje_usuarios = get_correctas($result);
 	
 	$cant = count($result);
 	$i=0;
 	while($i < $cant){
-		$result[$i]['porcentaje'] = (round($porcentaje_usuarios[$i], 4)*100).'%';
-		$i++;
+            $result[$i]['porcentaje'] = $porcentaje_usuarios[$i];
+            $i++;
 	}
 	return 	$result;
 }
@@ -274,52 +275,38 @@ function rankingMensual($categoria, $id_provincia = 0, $id_mes = "00", $id_anio 
 	}
         
         $query .= 'GROUP BY u.id ';
-        $query .= "ORDER BY 2 DESC LIMIT 50";
+        $query .= "ORDER BY 2 DESC, u.id LIMIT 50";
         
         $result = rows_($query);
         
-	$porcentaje_usuarios = get_porcentaje_correctas($result);
+	$porcentaje_usuarios = get_correctas($result);
 	
 	$cant = count($result);
 	$i=0;
 	while($i < $cant){
-		$result[$i]['porcentaje'] = (round($porcentaje_usuarios[$i], 4)*100).'%';
-		$i++;
+            $result[$i]['porcentaje'] = $porcentaje_usuarios[$i];
+            $i++;
 	}
 	return 	$result;
 }
 
-function get_porcentaje_correctas($result){
-	$cant = count($result);
-	$porcentaje_usuarios = array();
-	$i=0;
-	while($i < $cant){
-		$users_id = $result[$i]['id'];
-		$query = "SELECT COUNT(RU.id) AS cant FROM respuestas_usuarios RU
-				INNER JOIN respuestas Re ON RU.id_respuesta = Re.id
-				WHERE Re.correcta = 1 AND RU.id_usuario = $users_id
-				ORDER BY RU.id_usuario";
-		$rs = mysql_($query);
-		$row = mysql_fetch_assoc($rs);
-		$cant_correctas	= $row['cant'];
-		
-		$query = "SELECT COUNT(RU.id) AS cant FROM respuestas_usuarios RU
-				WHERE RU.id_usuario = $users_id
-				ORDER BY RU.id_usuario";
-		$rs = mysql_($query);
-		$row = mysql_fetch_assoc($rs);
-		$cant_respondidas = $row['cant'];
-		
-		if($cant_respondidas != 0){
-			$porcentaje_usuarios[$i] = $cant_correctas/$cant_respondidas;
-		}
-		else{
-			$porcentaje_usuarios[$i] = 0;
-		}
-		$i++;
-	}
-	
-	return $porcentaje_usuarios;
+function get_correctas($result){
+    $cant = count($result);
+    $usuarios = array();
+    $i=0;
+    while($i < $cant){
+        $users_id = $result[$i]['id'];
+        $query = "SELECT COUNT(RU.id) AS cant FROM respuestas_usuarios RU
+                    INNER JOIN respuestas Re ON RU.id_respuesta = Re.id
+                    WHERE Re.correcta = 1 AND RU.id_usuario = $users_id
+                    ORDER BY RU.id_usuario";
+        $rs = mysql_($query);
+        $row = mysql_fetch_assoc($rs);            
+        $usuarios[$i] = $row['cant'];
+        $i++;
+    }
+
+    return $usuarios;
 }
 function get_novedades(){
 	return rows_("SELECT * FROM novedades ORDER BY fecha DESC");	

@@ -49,7 +49,7 @@
                     </select>
                     <textarea id="pregunta" name="pregunta" ></textarea>
                     <p id="enviando_pregunta" hidden>Enviando pregunta... </p>
-                    <input id="enviar" name="enviar" class="btn_form" type="button" value="Enviar" onclick="enviar_sugerencia()"/>
+                    <input id="enviar" name="enviar" class="btn_form" type="button" value="Enviar" onclick='enviar_sugerencia(<?php echo('"' . ($_SESSION['usuario'] ? $_SESSION['usuario'] : "Alguien") . '"') ?>)'/>
                 </form>
             </div>
         </section>

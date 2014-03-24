@@ -1086,6 +1086,14 @@ ul
 	color:#fff;
 	font-weight:bold;
 }
+#centro #ranking #ranking_grill #noHayResultados
+{
+	font-family: 'calvert_light'; 
+        font-size: 28px; 
+        background-color: rgb(74, 74, 74); 
+        color: white; 
+        text-align: center;
+}
 #centro #ranking #ranking_grill .datos
 {
 	position:relative;
