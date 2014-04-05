@@ -116,11 +116,11 @@
             <p>Categoria: <?php echo $pregunta["categoria"]; ?></p>
             <p>Puntos: <?php echo $pregunta["puntos"]; ?></p>
             <p>Mi respuesta: <?php echo $pregunta["respuesta"]; ?></p>
+            <?php if (isset($correcta["id"]) && $correcta["id"] !== $pregunta["id_respuesta"]) { ?>
             <p>Respuesta correcta: <?php echo $correcta["respuesta"]; ?></p>
+            <?php } ?>
             <br />
-            <?php    
-            }                                
-            ?>
+            <?php } ?>
         </div>
     </div>
     
