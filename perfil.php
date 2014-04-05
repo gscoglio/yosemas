@@ -17,6 +17,8 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <link type="text/css" rel="stylesheet" href="css/estilos.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
 <?php include_once("analyticstracking.php") ?>
@@ -95,7 +97,33 @@
 				?></span>
             </label>
         </form>
+
+        <?php $preguntas_usuario = get_preguntas_usuario($user_id); ?>
+        <div>
+            <h1>Mis Preguntas</h1> 
+            <?php 
+            foreach ($preguntas_usuario as $pregunta) {
+                $correcta = get_respuesta_correcta($pregunta["id_pregunta"]);
+                
+                if (! isset($correcta) || empty($correcta)) {
+            ?>
+                <h3>¿<?php echo $pregunta["pregunta"]; ?>? <span class="label label-default">Esperando respuesta</span></h3>
+            <?php } elseif ($correcta["id"] == $pregunta["id_respuesta"]) { ?>
+                <h3>¿<?php echo $pregunta["pregunta"]; ?>? <span class="label label-success">Correcta</span></h3>
+            <?php } else { ?>
+                <h3>¿<?php echo $pregunta["pregunta"]; ?>? <span class="label label-danger">Incorrecta</span></h3>
+            <?php } ?>
+            <p>Categoria: <?php echo $pregunta["categoria"]; ?></p>
+            <p>Puntos: <?php echo $pregunta["puntos"]; ?></p>
+            <p>Mi respuesta: <?php echo $pregunta["respuesta"]; ?></p>
+            <p>Respuesta correcta: <?php echo $correcta["respuesta"]; ?></p>
+            <br />
+            <?php    
+            }                                
+            ?>
+        </div>
     </div>
+    
     <footer id="footer">
     	<?php include('inc/footer.php'); ?>
     </footer>

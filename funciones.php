@@ -360,10 +360,39 @@ function get_correctas($result, $categoria){
 
     return $porcentaje_usuarios;
 }
+
 function get_novedades(){
 	return rows_("SELECT * FROM novedades ORDER BY fecha DESC");	
 }
+
 function get_premios(){
 	return rows_("SELECT * FROM premios ORDER BY id DESC");
 }
-?>
+
+function get_preguntas_usuario($usuario) {
+    
+    $query = "SELECT * 
+                FROM respuestas_usuarios ru
+                INNER JOIN preguntas pr ON ru.id_pregunta = pr.id
+                INNER JOIN respuestas re ON ru.id_respuesta = re.id
+                INNER JOIN categorias ca ON pr.id_categoria = ca.id
+                WHERE id_usuario = $usuario
+                ORDER BY pr.fecha_fin DESC";
+
+    $preguntas = rows_($query);
+    
+    return $preguntas;
+}
+
+function get_respuesta_correcta($id_pregunta) {
+    
+    $query = "SELECT * 
+                FROM respuestas r
+                WHERE id_pregunta = $id_pregunta 
+                AND correcta = 1;";
+
+    $rs = mysql_($query);
+    $correcta = mysql_fetch_assoc($rs);
+    
+    return $correcta;
+}
