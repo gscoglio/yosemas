@@ -27,10 +27,16 @@
     <div id="centro">
         <section id="datos_usuario">
 			<?php include('inc/perfil.php'); ?>
-            <div id="filtrar_por_provincia">
-                <div class="titulo">Filtrar por Provincia</div>
+            
+        </section>
+        <nav>
+			<?php include('inc/btn_categorias.php'); ?>
+        </nav>
+        <section id="ranking">
+            <div id='filtros'>
+                <label>Provincia:</label>
                 <select id="provincia" name="provincia" size="1" onchange="var x = $('#categoria_val').val();categoria(x)">
-                	<option value="0">Todas</option>
+                        <option value="0">Todas</option>
                     <?php
                     $provincias = get_provincias();
                     $tot_provincias = sizeof($provincias);
@@ -41,38 +47,33 @@
                     }while($i <= $tot_provincias);
                     ?>
                 </select>
-            </div>
-            <div id="filtrar_por_mes">
-                <div class="titulo">Filtrar por Mes</div>
-                <select id="filtrar_por_mes_select" name="mes" onchange="var x = $('#categoria_val').val();categoria(x)">
-                	<option value="00">Todos</option>
-                        <option value="01">Enero</option>
-                        <option value="02">Febrero</option>
-                        <option value="03">Marzo</option>
-                        <option value="04">Abril</option>
-                        <option value="05">Mayo</option>
-                        <option value="06">Junio</option>
-                        <option value="07">Julio</option>
-                        <option value="08">Agosto</option>
-                        <option value="09">Septiembre</option>
-                        <option value="10">Octubre</option>
-                        <option value="11">Noviembre</option>
-                        <option value="12">Diciembre</option>                    
+                <label id="filtrar_por_mes_label">Mes:</label>
+                <?php $mesActual = date("m");?>
+                <select id="filtrar_por_mes_select" name="mes" onchange="var x = $('#categoria_val').val();categoria(x);">
+                    <option value="00">Todos</option>
+                    <option value="01" <?php if ($mesActual == "01") {echo "selected";} ?>>Enero</option>
+                    <option value="02" <?php if ($mesActual == "02") {echo "selected";} ?>>Febrero</option>
+                    <option value="03" <?php if ($mesActual == "03") {echo "selected";} ?>>Marzo</option>
+                    <option value="04" <?php if ($mesActual == "04") {echo "selected";} ?>>Abril</option>
+                    <option value="05" <?php if ($mesActual == "05") {echo "selected";} ?>>Mayo</option>
+                    <option value="06" <?php if ($mesActual == "06") {echo "selected";} ?>>Junio</option>
+                    <option value="07" <?php if ($mesActual == "07") {echo "selected";} ?>>Julio</option>
+                    <option value="08" <?php if ($mesActual == "08") {echo "selected";} ?>>Agosto</option>
+                    <option value="09" <?php if ($mesActual == "09") {echo "selected";} ?>>Septiembre</option>
+                    <option value="10" <?php if ($mesActual == "10") {echo "selected";} ?>>Octubre</option>
+                    <option value="11" <?php if ($mesActual == "11") {echo "selected";} ?>>Noviembre</option>
+                    <option value="12" <?php if ($mesActual == "12") {echo "selected";} ?>>Diciembre</option>                    
                 </select>
+                <label id="filtrar_por_anio_label">Año:</label>
+                <?php $anioActual = date("Y");?>
                 <select id="filtrar_por_anio_select" name="anio" onchange="var x = $('#categoria_val').val();categoria(x)">
-                	<option value="00">Todos</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>                        
+                    <option value="00">Todos</option>
+                    <option value="2014" <?php if ($anioActual == "2014") {echo "selected";} ?>>2014</option>
+                    <option value="2015" <?php if ($anioActual == "2015") {echo "selected";} ?>>2015</option>
+                    <option value="2016" <?php if ($anioActual == "2016") {echo "selected";} ?>>2016</option>                        
                 </select>
             </div>
-        </section>
-        <nav>
-			<?php include('inc/btn_categorias.php'); ?>
-        </nav>
-        <section id="ranking">
-        	<div id="ranking_grill">
-            </div>
+            <div id="ranking_grill"></div>
         </section>
     </div>
     <footer id="footer">

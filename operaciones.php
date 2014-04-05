@@ -453,7 +453,7 @@ switch($operacion){
                 $ranking = ranking($categoria, $id_provincia);
             }
             if (! empty($ranking)) {
-                echo '<div id="top50">TOP 50</div>';
+                echo '<div id="top50"></div>';
 		echo ' <ul class="titulo">
 			<li style="margin-right:10px">#</li>
 			<li>Nombre</li>

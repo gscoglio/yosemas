@@ -142,22 +142,27 @@ $('#formLogin .btn_form_banda').keydown(function(e) {
 function color(categoria){	
 	switch(categoria){
 		case 1:
+                case "1":
 			return '#4a4a4a';
 		break; 
 		
 		case 2:
+                case "2":
 			return '#67c184';
 		break;
 		
 		case 3:
+                case "3":
 			return '#66a3c1';
 		break;
 		
 		case 4:
+                case "4":
 			return '#c1c166';
 		break;
 		
 		case 5:
+                case "5":
 			return '#ad4733';
 		break;	
 	}
@@ -172,7 +177,7 @@ function categoria(categoria)
 	else if(window.pagina == 'ranking'){
 		var operacion = 18;
 		var id = '#centro #ranking #ranking_grill';
-		var id_provincia = $('#filtrar_por_provincia select option:selected').val();
+		var id_provincia = $('#provincia option:selected').val();
                 var id_mes = $('#filtrar_por_mes_select option:selected').val();
                 var id_anio = $('#filtrar_por_anio_select option:selected').val();
 		$('#categoria_val').val(categoria);
@@ -184,9 +189,25 @@ function categoria(categoria)
 		}).done(function(msg) {
 			$(id).html(msg);
 			grilla(5,50,'ranking_grill');
-			$('#centro #ranking #ranking_grill').css('border-color',color(categoria));
-	});		
-	window.categoria_color = categoria;	
+                        
+                        $('#centro #ranking #ranking_grill').css('border-color',color(categoria));
+                        $('#centro #ranking #ranking_grill #top50').css('background-color',color(categoria));
+                        $('#centro #ranking #ranking_grill #noHayResultados').css('background-color',color(categoria));
+                
+                        var titulo = '';
+                        var provincia = $('#filtros #provincia option:selected').text();
+                        if (provincia !== 'Todas') {titulo = titulo.concat(provincia.concat(", "));}
+                        
+                        var mes = $('#filtrar_por_mes_select option:selected').text();
+                        if (mes !== "Todos") {titulo = titulo.concat(mes.concat(" "));}
+                        
+                        var anio = $('#filtrar_por_anio_select option:selected').text();
+                        if (anio !== "Todos") {titulo = titulo.concat(anio.concat(" "));}
+                        
+                        if (titulo === "") {titulo = "Posiciones generales";}
+                        $('#top50').text(titulo);
+	});
+	window.categoria_color = categoria; 
 }
 function validar_respuesta(id_pregunta,i,id_usuario){
 	id_categoria = $('input[name=categoria]').val();
