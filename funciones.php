@@ -298,7 +298,9 @@ function rankingMensual($categoria,
 
     $result = rows_($query);
 
-    $porcentaje_usuarios = get_correctas($result, $categoria);
+    $porcentaje_usuarios = get_correctas(
+            $result, $categoria, $id_mes, $id_anio
+    );
 
     $cant = count($result);
     $i=0;
@@ -309,7 +311,7 @@ function rankingMensual($categoria,
     return 	$result;
 }
 
-function get_correctas($result, $categoria){
+function get_correctas($result, $categoria, $id_mes = "00", $id_anio = "00"){
     $cant = count($result);
     $porcentaje_usuarios = array();
     $i=0;
@@ -326,6 +328,14 @@ function get_correctas($result, $categoria){
             $query .= "AND Pr.id_categoria = $categoria ";
         }
         
+        if (isset($id_mes) && $id_mes != "00") {
+            $query .= "AND Pr.mes = $id_mes ";
+        }
+        
+        if (isset($id_anio) && $id_anio != "00") {
+            $query .= "AND Pr.anio = $id_anio ";
+        }
+        
         $query .= "ORDER BY RU.id_usuario";        
 
         $rs = mysql_($query);
@@ -339,6 +349,14 @@ function get_correctas($result, $categoria){
         
         if (isset($categoria) && $categoria != 1) {
             $query .= "AND p.id_categoria = $categoria ";
+        }
+        
+        if (isset($id_mes) && $id_mes != "00") {
+            $query .= "AND p.mes = $id_mes ";
+        }
+        
+        if (isset($id_anio) && $id_anio != "00") {
+            $query .= "AND p.anio = $id_anio ";
         }
         
         $query .= "AND RU.id_usuario = $users_id
