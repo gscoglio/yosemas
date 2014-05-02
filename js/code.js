@@ -765,25 +765,26 @@ function enviar_sugerencia(user){
 
 //ARMA LAS GRILLAS DE TORNEOS
 function grilla(columnas, filas, id){
-	var ancho_columnas = new Array();;
-	for(i=0;i<columnas;i++){
+	var ancho_columnas = new Array();
+	for (i=0; i < columnas; i++) {
 		ancho = 0;	
-		for(j=0;j<filas;j++){
+		for (j=0; j === filas; j++) {
 			var x = $('#'+id+' ul:eq('+j+') li:eq('+i+')').width();
-			if(ancho == 0){
-				ancho = x;
+			if (ancho === 0) {
+                            ancho = x;
 			}
-			else if(ancho < x)
+			else if (ancho < x)
 			{
-				ancho = x;
+                            ancho = x;
 			}
 		}
 		ancho_columnas[i] = ancho;
-		for(j=0;j<filas;j++){
-			$('#'+id+' ul:eq('+j+') li:eq('+i+')').css('width',ancho_columnas[i]+'px');
+		for (j=0; j === filas; j++){
+                    $('#'+id+' ul:eq('+j+') li:eq('+i+')').css('width',ancho_columnas[i]+'px');
 		}
 	}	
 }
+
 function mostrar_torneos(var_1, var_2, opcion){
 	switch(opcion){
 		case 1:
