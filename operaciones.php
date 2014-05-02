@@ -462,17 +462,48 @@ switch($operacion){
 			<li class="puntos">Puntos</li>
 		</ul>';
 		$i = 0;
+                $requestMyUser = true;
 		foreach($ranking as $key){
-			echo '<ul class="datos">
-				<li class="primero">'.($i+1).'</li>
-				<li>'.$key['usuario'].'</li>
-				<li>'.utf8_decode($key['provincia']).'</li>
-				<li>'.$key['porcentaje'].'</li>
-				<li class="puntos">'.$key['puntos'].'</li>
+                        if ($user_id == $key['id']) {
+                            $fila = '<ul class="datos"' . 
+                                    ' style="background-color:#eff5e9;">';
+                            $requestMyUser = false;
+                        } else {
+                            $fila = '<ul class="datos">';
+                        }
+                        $fila .= '<li class="primero">' . ($i+1) . '</li>
+				<li>' . $key['usuario'] . '</li>
+				<li>' . utf8_decode($key['provincia']) . '</li>
+				<li>' . $key['porcentaje'] . '</li>
+				<li class="puntos">' . $key['puntos'] . '</li>
 				<div class="linea"></div>
 			</ul>';
+			echo $fila;
 			$i++;
 		}
+                
+                if ($requestMyUser && $user_id != 0) {
+                    $filaUsuario = rankingMensual(
+                        $categoria, 
+                        $id_provincia, 
+                        $id_mes, 
+                        $id_anio, 
+                        $user_id
+                    );
+                    
+                    foreach ($filaUsuario as $myUser) {
+                        echo '<ul class="datos" 
+                            style="background-color:#eff5e9;">
+                            <li class="primero"></li>
+                            <li>' . $myUser['usuario'] . '</li>
+                            <li>' . utf8_decode($myUser['provincia']) . '</li>
+                            <li>' . $myUser['porcentaje'] . '</li>
+                            <li class="puntos">' . $myUser['puntos'] . '</li>
+                            <div class="linea"></div>
+                            </ul>';
+                    }
+                }
+                
             } else {
                 echo '<div id="noHayResultados">No hay resultados para este período</div>';
             }

@@ -260,7 +260,8 @@ function ranking($categoria, $id_provincia = 0) {
 function rankingMensual($categoria, 
                         $id_provincia = 0, 
                         $id_mes = "00", 
-                        $id_anio = "00") {
+                        $id_anio = "00",
+                        $id_usuario = 0) {
     
     $query = 'SELECT u.id, sum(puntos) as puntos, u.usuario, prov.provincia 
                 FROM preguntas p 
@@ -276,6 +277,10 @@ function rankingMensual($categoria,
                     AND u.id = du.id_usuario 
                     AND du.id_provincia = prov.id
                     AND r.correcta = 1 ';
+    
+    if ($id_usuario != 0) {
+        $query .= "AND u.id = $id_usuario ";
+    }
 
     if (isset($categoria) && $categoria != "1") {
         $query .= "AND p.id_categoria = $categoria ";
