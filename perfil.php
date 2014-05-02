@@ -45,56 +45,17 @@
         	<label>
             	Nick: <span><?php echo $usuario_datos['usuario']; ?></span>
             </label>
-        	<label>
-            	Nombre: <span><?php echo ucwords(strtolower($usuario_datos['nombre'])); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                Apellido: <span><?php echo ucwords(strtolower($usuario_datos['apellido'])); ?></span>
-            </label>
             <label for="pick_date">
             	Fecha de nacimiento: <span><?php echo $nacimiento; ?></span>
             </label>
             <label>
-            	Sexo: <span><?php echo ucwords($usuario_datos['sexo']); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                DNI: <span><?php echo $usuario_datos['dni']; ?></span>
+            	Sexo: <span><?php echo ucwords($usuario_datos['sexo']); ?></span>                
             </label>
             <label>
-            	Provincia: <span><?php echo utf8_decode($usuario_datos['provincia']); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
                 Localidad: <span><?php echo ucwords(strtolower($usuario_datos['localidad'])); ?></span>
             </label>
             <label>
-                E-mail: <span><?php echo $usuario_datos['email']; ?></span>
-            </label>
-            <label>
-            	Twitter: <span>
-				<?php 
-				if($usuario_datos['twitter']){
-					echo $usuario_datos['twitter']; 
-				}
-				else{
-					echo '--';	
-				}
-				?></span>
-            </label>
-            <label>
-            	Tel&eacute;fono: <span>
-				<?php 
-				if($usuario_datos['telefono']){
-					echo $usuario_datos['telefono']; 
-				}
-				else{
-					echo '--';	
-				}
-				?></span>
-            </label>
-            <label>
-            	Celular: <span>
-				<?php 
-				if($usuario_datos['celular']){
-					echo $usuario_datos['celular']; 
-				}
-				else{
-					echo '--';	
-				}
-				?></span>
+            	Provincia: <span><?php echo utf8_decode($usuario_datos['provincia']); ?></span>
             </label>
         </form>
 
